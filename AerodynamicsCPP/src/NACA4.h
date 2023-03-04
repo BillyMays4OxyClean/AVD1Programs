@@ -1,4 +1,6 @@
 #include "Airfoil.h"
+#include <vector>
+#include <string>
 
 #ifndef NACA4_H
 #define NACA4_H
@@ -10,6 +12,18 @@ public:
 	void NACA4();
 	void NACA4(std::string NACA, double wingChord, double oswaldFactor_e = 0.7);
 
+	double get_a0l();
+	double getCmac();
+	vector<double> getCamberLine();
+	vector<double> getCamberLineSlope();
+
+private:
+        double calculate_a0l();
+        double calculateCmac();
+        double calculateCamberLine();
+        double calculateCamberLineSlope();
+
+protected:
 
 };
 #endif
