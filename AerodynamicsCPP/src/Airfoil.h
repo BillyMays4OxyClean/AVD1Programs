@@ -26,12 +26,15 @@ public:
 
 	void Airfoil();
 
-	void ExportDatFile(std::string filename);
-	void ImportFromDatFile(std::string filename);
+	int ExportDatFile(std::string filename);
+	int ImportFromDatFile(std::string filename);
 
 	double getMaxThicknessLocation();
 	double getMaxThickness();
 	double get
+
+	void PlotAirfoil();
+
 private:
 	double m_p, m_m, m_t, m_c;
 	vector<double> m_xu, m_xl, m_yu, m_yl, m_xc, m_yc, m_dycdx;
