@@ -1,0 +1,6 @@
+
+class Atm
+{
+public:
+
+};
