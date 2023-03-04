@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 using namespace std;
 
 #ifndef AIRFOIL_H
@@ -12,8 +13,11 @@ using namespace std;
  *
  * m: maximum thickness ordinate of the mean line in fraction of the chord
  *
- * p: x-location of maximum thickness chordwise position of m
- * xu: abscissa of point on the upper surface of a wing section
+ * p: x-location of maximum thickness, m
+ * xu: abscissa points on the upper surface of the wing section
+ * xl: abscissa points on the lower surface of the wing section
+ * yu: ordinate points on the upper surface of the wing section
+ * yl: ordinate points on the lower surface of the wing section
 */
 
 class Airfoil
@@ -22,20 +26,16 @@ public:
 
 	void Airfoil();
 
-	double Calculate_a0l();
+	void ExportDatFile(std::string filename);
+	void ImportFromDatFile(std::string filename);
 
-	double Calculate_Cmac();
-
-	double CamberLine();
-
-	double CamberLineSlope();
-
-//	Airfoil ImportFromDatFile(const char * filename);
-
+	double getMaxThicknessLocation();
+	double getMaxThickness();
+	double get
 private:
 	double m_p, m_m, m_t, m_c;
-	double m_xu, m_xl, m_yu, m_yl, m_xc, m_yc, m_dycdx;
-	double m_a0l, m_Cmac, m_e;
+	vector<double> m_xu, m_xl, m_yu, m_yl, m_xc, m_yc, m_dycdx;
+	vector<double> m_a0l, m_Cmac, m_e;
 
 	string m_Name;
 
