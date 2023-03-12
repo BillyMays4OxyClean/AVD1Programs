@@ -31,16 +31,15 @@ public:
 
 	double getMaxThicknessLocation();
 	double getMaxThickness();
-	double get
 
 	void PlotAirfoil();
+
+	string m_Name;
 
 private:
 	double m_p, m_m, m_t, m_c;
 	vector<double> m_xu, m_xl, m_yu, m_yl, m_xc, m_yc, m_dycdx;
 	vector<double> m_a0l, m_Cmac, m_e;
-
-	string m_Name;
 
 	int m_nseg;
 };
