@@ -24,7 +24,6 @@ class Airfoil
 {
 public:
 
-	void Airfoil();
 
 	int ExportDatFile(std::string filename);
 	int ImportFromDatFile(std::string filename);
@@ -44,4 +43,4 @@ private:
 	int m_nseg;
 };
 
-#endif AIRFOIL_H
+#endif

@@ -1,7 +1,11 @@
 #include <iostream>
+#include <math.h>
+#include <string>
+
 #include "IntegrateSimpson.h"
 #include "LinSpace.h"
-#include <math.h>
+#include "NACA4.h"
+
 using namespace std;
 
 int main(int argc, char** argv)
@@ -13,8 +17,10 @@ int main(int argc, char** argv)
 	for (size_t i{}; i < x.size(); i++)
 	{
 		y.push_back(sin(x.at(i)));
-//		cout << y.at(i) << endl;
 	}
 
 	printf("The integral from 0 to pi/2 of sinx is: %.2f\n", IntegrateSimpson(y,(double) 0, (double) M_PI/2));
+
+      NACA4 foil(string("2312")); // NACA 2312
+
 };

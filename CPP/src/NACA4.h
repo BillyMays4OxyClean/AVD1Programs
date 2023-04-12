@@ -9,8 +9,9 @@ class NACA4 : Airfoil
 {
 
 public:
-	void NACA4();
-	void NACA4(std::string NACA, double wingChord = 1, double oswaldFactor_e = 0.7);
+	NACA4();
+	NACA4(std::string NACA);
+      NACA4(const char* NACA);
 
 	double get_a0l();
 	double getCmac();
@@ -18,10 +19,13 @@ public:
 	vector<double> getCamberLineSlope();
 
 private:
-        double calculate_a0l();
-        double calculateCmac();
-        double calculateCamberLine();
-        double calculateCamberLineSlope();
+      double calculate_a0l();
+      double calculateCmac();
+      double calculateCamberLine();
+      double calculateCamberLineSlope();
+      double upperFunction(double abscissa);
+      double lowerFunction(double ordinate);
+
 
 protected:
 
