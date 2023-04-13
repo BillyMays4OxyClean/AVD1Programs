@@ -1,17 +1,18 @@
-#include "Airfoil.h"
-#include <vector>
-#include <string>
 
 #ifndef NACA4_H
 #define NACA4_H
+
+#include <vector>
+#include <string>
+#include "Airfoil.h"
+#include "LinSpace.h"
 
 class NACA4 : Airfoil
 {
 
 public:
-	NACA4();
-	NACA4(std::string NACA);
-      NACA4(const char* NACA);
+	NACA4(std::string NACA,int nseg=128);
+	NACA4(const char* NACA,int nseg=128);
 
 	double get_a0l();
 	double getCmac();
@@ -19,12 +20,19 @@ public:
 	vector<double> getCamberLineSlope();
 
 private:
-      double calculate_a0l();
-      double calculateCmac();
-      double calculateCamberLine();
-      double calculateCamberLineSlope();
-      double upperFunction(double abscissa);
-      double lowerFunction(double ordinate);
+	double m_p, m_m, m_t, m_c, m_e;
+	vector<double> m_x, m_yu, m_yl, m_xc, m_yc, m_dycdx;
+	vector<double> m_a0l, m_Cmac, m_e;
+
+     	double calculate_a0l();
+ 	double calculateCmac();
+        vector<double> calculateCamberLine();
+        double calculateCamberLineSlope();
+        double upperFunction(double abscissa);
+        double lowerFunction(double ordinate);
+
+	void createAbscissa();
+	void createOrdinate();
 
 
 protected:
