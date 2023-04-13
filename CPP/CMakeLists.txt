@@ -7,4 +7,5 @@ add_executable(AVD
       src/NACA4.cpp
       src/Airfoil.cpp
       src/Atm.cpp
+      src/ClassTesting.cpp
 )
