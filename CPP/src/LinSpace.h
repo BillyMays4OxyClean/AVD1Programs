@@ -1,7 +1,6 @@
 #ifndef LINSPACE_H_
 #define LINSPACE_H_
 #include <vector>
-using namespace std;
 
 vector<double> LinSpace(double x1, double x2, const int nseg)
 {
