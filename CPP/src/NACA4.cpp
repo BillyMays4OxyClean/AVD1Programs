@@ -22,7 +22,9 @@ m_x(LinSpace(0,c,nseg))
       	cout << m << endl;
       	cout << t << endl;
 
-	createAbscissa();	
+	createAbscissa();
+
+
 
 };
 
@@ -34,10 +36,10 @@ NACA4::NACA4(const char* NACA,int nseg=128)
 	int m = NACA[1] - '0';
 	int t = stoi(string(NACA).substr(2,3));
 
-      cout << "Generating NACA 4 digit airfoil: " << NACA << endl;
-      cout << p << endl;
-      cout << m << endl;
-      cout << t << endl;
+      	cout << "Generating NACA 4 digit airfoil: " << NACA << endl;
+       	cout << p << endl;
+	cout << m << endl;
+      	cout << t << endl;
 };
 
 void
