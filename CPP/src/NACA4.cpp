@@ -22,8 +22,6 @@ m_x(LinSpace(0,c,nseg))
       	cout << m << endl;
       	cout << t << endl;
 
-	createAbscissa();
-
 
 
 };
