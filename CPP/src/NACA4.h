@@ -36,9 +36,9 @@ public:
 	vector<double> getCamberLineSlope();
 
 private:
-	double m_p, m_m, m_t, m_c, m_e;
-	vector<double> m_x, m_yu, m_yl, m_xc, m_yc, m_dycdx;
-	vector<double> m_a0l, m_Cmac, m_e;
+	double p, m, t, c, e;
+	vector<double> x, yu, yl, xc, yc, dycdx;
+	vector<double> a0l, Cmac, e;
 
      	double calculate_a0l();
  	double calculateCmac();
