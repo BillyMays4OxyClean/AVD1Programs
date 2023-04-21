@@ -33,14 +33,14 @@ public:
 
 	void PlotAirfoil();
 
-	string m_Name;
+	string Name;
 
-private:
-	double m_p, m_m, m_t, m_c;
-	vector<double> m_xu, m_xl, m_yu, m_yl, m_xc, m_yc, m_dycdx;
-	vector<double> m_a0l, m_Cmac, m_e;
+protected:
+	double p, m, t, c;
+	vector<double> x, yu, yl, xc, yc, dycdx;
+	vector<double> a0l, Cmac, e;
 
-	int m_nseg;
+	int nseg;
 };
 
 #endif
