@@ -40,12 +40,12 @@ private:
 	vector<double> x, yu, yl, xc, yc, dycdx;
 	vector<double> a0l, Cmac, e;
 
-     	double calculate_a0l();
+	double calculate_a0l();
  	double calculateCmac();
-        vector<double> calculateCamberLine();
-        double calculateCamberLineSlope();
-        double upperFunction(double abscissa);
-        double lowerFunction(double ordinate);
+	vector<double> calculateCamberLine();
+	double calculateCamberLineSlope();
+	double upperFunction(double abscissa);
+	double lowerFunction(double ordinate);
 
 	void createAbscissa();
 	void createOrdinate();
