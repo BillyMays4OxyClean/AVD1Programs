@@ -38,9 +38,20 @@ x(LinSpace(0,c,nseg))
 			dycdx.at(i) = 2 * m / pow((1-p), 2.0) * (p - xi);
 		}
 
-		yt.at(i) = t/0.2 * ( 0.29690*sqrt(xi) - 0.12600*xi - 0.35160 * pow(xi,2) + 0.28430 * pow(xi,3) - 0.10150 * pow(xi,4));
 		theta.at(i) = atan(dycdx.at(i));
 
+		yt.at(i) = t/0.2 * ( 0.29690*sqrt(xi) - 0.12600*xi - 0.35160 * pow(xi,2) + 0.28430 * pow(xi,3) - 0.10150 * pow(xi,4));
+
+            if ((p != 0) || (m != 0))
+            {
+                  yu.at(i) = yc.at(i) + yt.at(i)*cos(theta.at(i));
+                  yl.at(i) = yc.at(i) - yt.at(i)*cos(theta.at(i));
+            }
+            else
+            {
+                  yu.at(i) = yt.at(i);
+                  yl.at(i) = -yt.at(i);
+            }
 	}
 
 
