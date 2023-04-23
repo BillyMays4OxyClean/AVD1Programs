@@ -2,7 +2,7 @@
 #define LINSPACE_H_
 #include <vector>
 
-vector<double> LinSpace(double x1, double x2, const int nseg)
+inline vector<double> LinSpace(double x1, double x2, int nseg)
 {
 	vector<double> double_array{};
 
