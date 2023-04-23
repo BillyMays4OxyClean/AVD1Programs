@@ -3,7 +3,6 @@
 #include <string>
 
 #include "IntegrateSimpson.h"
-#include "LinSpace.h"
 #include "NACA4.h"
 
 using namespace std;
