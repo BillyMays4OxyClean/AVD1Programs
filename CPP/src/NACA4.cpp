@@ -7,20 +7,18 @@ using namespace std;
 
 NACA4::NACA4(std::string NACA,int nseg)
 :
-c(1.0),
-x(LinSpace(0.0,c,nseg)),
+Airfoil(),
 yc(LinSpace(0.0,0.0,nseg)),
-dycdx(LinSpace(0.0,0.0,nseg)),
-yu(LinSpace(0.0,0.0,nseg)),
-yl(LinSpace(0.0,0.0,nseg))
+dycdx(LinSpace(0.0,0.0,nseg))
 {
+	Name = NACA;
 	/* Make a NACA string validator, based on a regex maybe. If it doesn't
 	 pass the validator, an exception is made. */
 	int p = NACA.at(0) - '0';
 	int m = NACA.at(1) - '0';
 	int t = stoi(NACA.substr(2,3));
 
-	cout << "Generating NACA 4 digit airfoil: " << NACA << endl;
+	cout << "Generating NACA4 digit airfoil: " << NACA << endl;
 	cout << p << endl;
 	cout << m << endl;
 	cout << t << endl;
@@ -28,7 +26,7 @@ yl(LinSpace(0.0,0.0,nseg))
 	vector<double> yt{(LinSpace(0.0,0.0,nseg))};
 	vector<double> theta{(LinSpace(0.0,0.0,nseg))};
 
-	for (size_t i = 0; i < (nseg-1); i++)
+	for (size_t i = 0; i < nseg ; i++)
 	{
 		double xi = x.at(i);
 		if (xi <= p)
@@ -57,4 +55,6 @@ yl(LinSpace(0.0,0.0,nseg))
                   yl.at(i) = -yt.at(i);
             }
 	}
+
+	ExportFile("NACA" + Name + ".dat");
 };

@@ -23,7 +23,9 @@ using namespace std;
 class Airfoil
 {
 public:
-	int ExportDatFile(std::string filename);
+	Airfoil();
+	
+	int ExportFile(std::string filename);
 	int ImportFromDatFile(std::string filename);
 
 	double getMaxThicknessLocation();
@@ -31,7 +33,7 @@ public:
 
 	void PlotAirfoil();
 
-	string Name;
+	std::string Name;
 
 protected:
 	double p, m, t, c;
