@@ -27,7 +27,7 @@ class NACA4 : Airfoil
 {
 
 public:
-	NACA4(std::string NACA,int nseg = 128);
+	NACA4(std::string NACA, int nseg = 128);
 
 	double get_a0l();
 	double getCmac();
@@ -35,8 +35,8 @@ public:
 	vector<double> getCamberLineSlope();
 
 private:
-	double p, m, t, c, e;
-	vector<double> x, yu, yl, xc, yc, dycdx;
+	double p, m, e;
+	vector<double> xc, yc, dycdx;
 	vector<double> a0l, Cmac;
 
 	double calculate_a0l();
@@ -48,9 +48,6 @@ private:
 
 	void createAbscissa();
 	void createOrdinate();
-
-
-protected:
 
 };
 #endif

@@ -14,9 +14,9 @@ dycdx(LinSpace(0.0,0.0,nseg))
 	Name = NACA;
 	/* Make a NACA string validator, based on a regex maybe. If it doesn't
 	 pass the validator, an exception is made. */
-	int p = NACA.at(0) - '0';
-	int m = NACA.at(1) - '0';
-	int t = stoi(NACA.substr(2,3));
+	p = NACA.at(0) - '0';
+	m = NACA.at(1) - '0';
+	t = stoi(NACA.substr(2,3));
 
 	cout << "Generating NACA4 digit airfoil: " << NACA << endl;
 	cout << p << endl;
@@ -44,16 +44,17 @@ dycdx(LinSpace(0.0,0.0,nseg))
 
 		yt.at(i) = t/0.2 * ( 0.29690*sqrt(xi) - 0.12600*xi - 0.35160 * pow(xi,2) + 0.28430 * pow(xi,3) - 0.10150 * pow(xi,4));
 
-            if ((p != 0) || (m != 0))
-            {
-                  yu.at(i) = yc.at(i) + yt.at(i)*cos(theta.at(i));
-                  yl.at(i) = yc.at(i) - yt.at(i)*cos(theta.at(i));
-            }
-            else
-            {
-                  yu.at(i) = yt.at(i);
-                  yl.at(i) = -yt.at(i);
-            }
+		if ((p != 0) || (m != 0))
+		{
+			yu.at(i) = yc.at(i) + yt.at(i)*cos(theta.at(i));
+			yl.at(i) = yc.at(i) - yt.at(i)*cos(theta.at(i));
+		}
+		else
+		{
+			yu.at(i) = yt.at(i);
+			yl.at(i) = -yt.at(i);
+		}
+		cout << yu.at(i) << "\t" << yl.at(i) << endl;
 	}
 
 	ExportFile("NACA" + Name + ".dat");

@@ -34,12 +34,12 @@ public:
 	void PlotAirfoil();
 
 	std::string Name;
-
-protected:
-	double p, m, t, c;
-	vector<double> x, yu, yl, xc, yc, dycdx;
+	
+	vector<double> x, yu, yl;
 
 	int nseg;
+	double t, c;
+
 };
 
 #endif
