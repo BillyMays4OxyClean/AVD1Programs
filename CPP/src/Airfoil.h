@@ -23,6 +23,8 @@ using namespace std;
 class Airfoil
 {
 public:
+	Airfoil();
+	
 	int ExportFile(std::string filename);
 	int ImportFromDatFile(std::string filename);
 

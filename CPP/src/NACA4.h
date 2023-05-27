@@ -39,7 +39,7 @@ private:
 	vector<double> xc, yc, dycdx;
 	vector<double> a0l, Cmac;
 
-      int nseg;
+	int nseg;
 
 	double calculate_a0l();
  	double calculateCmac();
