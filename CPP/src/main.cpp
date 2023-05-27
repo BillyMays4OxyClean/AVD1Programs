@@ -20,6 +20,6 @@ int main(int argc, char** argv)
 
 	printf("The integral from 0 to pi/2 of sinx is: %.2f\n", IntegrateSimpson(y,(double) 0, (double) M_PI/2));
 
-      NACA4 foil(string("2312")); // NACA 2312
+    NACA4 foil(string("2312")); // NACA 2312
 
 };
