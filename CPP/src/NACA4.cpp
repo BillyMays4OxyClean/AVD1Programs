@@ -7,7 +7,11 @@ using namespace std;
 
 NACA4::NACA4(std::string NACA,int nseg)
 :
-Airfoil(),
+nseg(128),
+c(1.0),
+x(LinSpace(0.0,c,nseg)),
+yu(LinSpace(0.0,0.0,nseg)),
+yl(LinSpace(0.0,0.0,nseg)),
 yc(LinSpace(0.0,0.0,nseg)),
 dycdx(LinSpace(0.0,0.0,nseg))
 {

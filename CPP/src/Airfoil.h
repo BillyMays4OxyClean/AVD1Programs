@@ -23,8 +23,6 @@ using namespace std;
 class Airfoil
 {
 public:
-	Airfoil();
-	
 	int ExportFile(std::string filename);
 	int ImportFromDatFile(std::string filename);
 
@@ -35,11 +33,11 @@ public:
 
 	std::string Name;
 
-protected:
 	double p, m, t, c;
 	vector<double> x, yu, yl, xc, yc, dycdx;
 
 	int nseg;
+
 };
 
 #endif

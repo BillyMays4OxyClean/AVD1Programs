@@ -23,7 +23,7 @@
  * yl: ordinate points on the lower surface of the wing section
 */
 
-class NACA4 : Airfoil
+class NACA4 : public Airfoil
 {
 
 public:
@@ -38,6 +38,8 @@ private:
 	double p, m, t, c, e;
 	vector<double> x, yu, yl, xc, yc, dycdx;
 	vector<double> a0l, Cmac;
+
+      int nseg;
 
 	double calculate_a0l();
  	double calculateCmac();
