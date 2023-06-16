@@ -2,9 +2,9 @@
 #define LINSPACE_H_
 #include <vector>
 
-inline vector<double> LinSpace(double x1, double x2, int nseg)
+inline std::vector<double> LinSpace(double x1, double x2, int nseg)
 {
-	vector<double> double_array{};
+	std::vector<double> double_array{};
 
 	for (int i{}; i < nseg; i++)
 	{

@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+#include "LinSpace.h"
+
 #ifndef AIRFOIL_H
 #define AIRFOIL_H
 
@@ -37,8 +39,8 @@ public:
 	
 	vector<double> x, yu, yl;
 
-	int nseg;
-	double t, c;
+	int nseg{128};
+	double t, c{1.0};
 
 };
 

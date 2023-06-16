@@ -5,9 +5,7 @@
 
 using namespace std;
 
-NACA4::NACA4(std::string NACA,int nseg)
-:
-Airfoil(),
+NACA4::NACA4(std::string NACA,int nseg):
 xc(LinSpace(0.0,c,nseg)),
 yc(LinSpace(0.0,0.0,nseg)),
 dycdx(LinSpace(0.0,0.0,nseg))
@@ -16,12 +14,15 @@ dycdx(LinSpace(0.0,0.0,nseg))
 	 pass the validator, an exception is made. */
 	
 	Name = NACA;
-	p = static_cast<double>(NACA.at(0) - '0');
-	m = static_cast<double>(NACA.at(1) - '0');
-	t = stod(NACA.substr(2,3));
+	p = static_cast<double>(NACA.at(0) - '0') / 10;
+	m = static_cast<double>(NACA.at(1) - '0') / 100;
+	t = stod(NACA.substr(2,3)) / 100;
 
 	cout << "Generating NACA4 digit airfoil: " << NACA << endl;
 
+      x = LinSpace(0.0,c,nseg);
+      yu = LinSpace(0.0,c,nseg);
+      yl = LinSpace(0.0,c,nseg);
 	vector<double> yt{LinSpace(0.0,0.0,nseg)};
 	vector<double> theta{LinSpace(0.0,0.0,nseg)};
 
@@ -30,10 +31,10 @@ dycdx(LinSpace(0.0,0.0,nseg))
 		double xi = x.at(i);
 		if (xi <= p)
 		{
-			yc.at(i) = m / pow(p,2.0) * (2*p*xi - pow(xi,2.0));
+			yc.at(i) = m / pow(p,2) * (2*p*xi - pow(xi,2));
 			dycdx.at(i) = 2 * m / pow(p, 2.0) * (p - xi);
 		}
-		else if (xi > p)
+		else if (xi >= p)
 		{
 			yc.at(i) = m / pow((1-p), 2.0) * ((1 - 2*p) + 2*p*xi - pow(xi,2.0));
 			dycdx.at(i) = 2 * m / pow((1-p), 2.0) * (p - xi);
@@ -53,7 +54,7 @@ dycdx(LinSpace(0.0,0.0,nseg))
 			yu.at(i) = yt.at(i);
 			yl.at(i) = -yt.at(i);
 		}
-		cout << yu.at(i) << ", " << yl.at(i) << endl;
+		cout << yl.at(i) << ", " << yu.at(i) << endl;
 	}
 
 	ExportFile("NACA" + Name + ".dat");
