@@ -36,7 +36,7 @@ public:
 
 private:
 	double p, m, e;
-	vector<double> xc, yc, dycdx;
+	vector<double> xc, dycdx;
 	vector<double> a0l, Cmac;
 
 	int nseg;

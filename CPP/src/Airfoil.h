@@ -37,7 +37,7 @@ public:
 
 	std::string Name;
 	
-	vector<double> x, yu, yl;
+	vector<double> x, yu, yl, yc;
 
 	int nseg{128};
 	double t, c{1.0};

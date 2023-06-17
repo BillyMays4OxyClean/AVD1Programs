@@ -7,7 +7,6 @@ using namespace std;
 
 NACA4::NACA4(std::string NACA,int nseg):
 xc(LinSpace(0.0,c,nseg)),
-yc(LinSpace(0.0,0.0,nseg)),
 dycdx(LinSpace(0.0,0.0,nseg))
 {
 	/* Make a NACA string validator, based on a regex maybe. If it doesn't
@@ -23,6 +22,7 @@ dycdx(LinSpace(0.0,0.0,nseg))
       x = LinSpace(0.0,c,nseg);
       yu = LinSpace(0.0,c,nseg);
       yl = LinSpace(0.0,c,nseg);
+      yc = LinSpace(0.0,c,nseg);
 	vector<double> yt{LinSpace(0.0,0.0,nseg)};
 	vector<double> theta{LinSpace(0.0,0.0,nseg)};
 
