@@ -2,6 +2,8 @@
 #include <math.h>
 #include <string>
 
+std::vector<double> LinSpace(double x1, double x2, int nseg);
+
 #include "IntegrateSimpson.h"
 #include "NACA4.h"
 

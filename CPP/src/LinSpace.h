@@ -1,5 +1,5 @@
-#ifndef LINSPACE_H_
-#define LINSPACE_H_
+#ifndef LINSPACE_H
+#define LINSPACE_H
 #include <vector>
 
 inline std::vector<double> LinSpace(double x1, double x2, int nseg)
