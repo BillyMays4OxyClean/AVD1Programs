@@ -24,3 +24,17 @@ int Airfoil::ExportFile(std::string filename)
     
     return 0;
 }
+
+int Airfoil::ExportFile(std::string filename, std::vector<double> abscissa, std::vector<double> ordinate)
+{
+    ofstream dataPoints(filename);
+    dataPoints << std::fixed << std::setprecision(6);
+
+    for (size_t i{}; i < nseg; i++)
+    {
+        dataPoints << abscissa.at(i) << "\t" << ordinate.at(i) << std::endl;
+    }
+    dataPoints.close();
+    
+    return 0;
+}

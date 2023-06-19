@@ -28,6 +28,7 @@ public:
 	Airfoil();
 	
 	int ExportFile(std::string filename);
+      int ExportFile(std::string filename, std::vector<double> abscissa, std::vector<double> ordinate);
 	int ImportFromDatFile(std::string filename);
 
 	double getMaxThicknessLocation();
